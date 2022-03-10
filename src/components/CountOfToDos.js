@@ -7,7 +7,7 @@ export const CountOfToDos = () => {
   const count = tasks.length;
   return (
     <>
-      <div>Your ToDos:</div>
+      <div>Your Tasks:</div>
       <h1>{count}</h1>
     </>
   );

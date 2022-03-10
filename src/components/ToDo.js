@@ -1,5 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 export const ToDo = ({ task }) => {
-  return <li className="task">{task.text}</li>;
+  const [isChecked, setIsChecked] = useState(false);
+
+  const handleOnChange = () => {
+    setIsChecked(!isChecked);
+  };
+  return (
+    <li className={isChecked ? 'checked' : 'unchecked'}>
+      {task.text}
+      <input
+        type="checkbox"
+        value="Done"
+        checked={isChecked}
+        onChange={handleOnChange}
+      />
+    </li>
+  );
 };

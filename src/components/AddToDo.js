@@ -14,9 +14,11 @@ export const AddToDo = () => {
       text,
     };
 
-    addTask(newTodo);
+    if (newTodo.text) addTask(newTodo);
   };
 
+  const { tasks } = useContext(GlobalContext);
+  console.log(tasks);
   return (
     <>
       <h3>Add new task</h3>
